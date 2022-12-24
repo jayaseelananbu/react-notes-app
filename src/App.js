@@ -1,5 +1,11 @@
-const App = () => {
-  return <div></div>
-}
+import NoteList from "./components/NotesList";
 
-export default App
+const App = () => {
+  return (
+    <div className="container">
+      <NoteList />
+    </div>
+  );
+};
+
+export default App;
