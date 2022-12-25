@@ -6,28 +6,50 @@ const App = () => {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
-      text: "This is my first note",
-      date: "26/12/2022",
+      text: "Sample note one",
+      date: "26/12/2022 01:02:51",
     },
     {
       id: nanoid(),
-      text: "This is my second note",
-      date: "25/12/2022",
+      text: "Sample note two",
+      date: "25/12/2022 01:02:52",
     },
     {
       id: nanoid(),
-      text: "This is my third note",
-      date: "24/12/2022",
+      text: "Sample note three",
+      date: "24/12/2022 01:02:53",
     },
     {
       id: nanoid(),
-      text: "This is my new note",
-      date: "23/12/2022",
+      text: "Sample note four",
+      date: "23/12/2022 01:02:54",
     },
   ]);
+
+  const addNote = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleString(),
+    };
+
+    const newNotesList = [...notes, newNote];
+    setNotes(newNotesList);
+  };
+
+  const deleteNote = (id) => {
+    const newNoteList = notes.filter((note) => note.id !== id);
+    setNotes(newNoteList);
+  };
+
   return (
     <div className="container">
-      <NoteList notes={notes} />
+      <NoteList
+        notes={notes}
+        handleAddNote={addNote}
+        handleDeleteNote={deleteNote}
+      />
     </div>
   );
 };

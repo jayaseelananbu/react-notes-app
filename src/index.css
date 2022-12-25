@@ -31,15 +31,20 @@ code {
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
+  /* max-height: 170px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
+  /* box-sizing: border-box; */
+  /* width: 100%; */
 }
 
 .note-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-style: oblique;
 }
 
 .note.new {
@@ -50,6 +55,7 @@ textarea {
   background-color: #67d7cc;
   border: none;
   resize: none;
+  /* overflow: hidden; */
 }
 
 textarea:focus {
