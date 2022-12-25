@@ -3,7 +3,6 @@ import NoteList from "./components/NotesList";
 import { nanoid } from "nanoid";
 import Search from "./components/Search";
 import Header from "./components/Header";
-import { MdDarkMode } from "react-icons/md";
 
 const App = () => {
   const [notes, setNotes] = useState([
